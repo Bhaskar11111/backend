@@ -1,13 +1,11 @@
 const express=require('express')
 const cors=require('cors')
 const app=express()
-const path=require('path')
 app.use(express.json())
 app.use(cors())
-app.use(express.static('./public'))
 const noteModel=require('./model/notes.model')
-
-
+const path=require('path')
+app.use(express.static('./public'))
 
 app.post('/api/notes',async(req,res)=>
 {

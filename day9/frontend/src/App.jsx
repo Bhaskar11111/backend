@@ -8,7 +8,7 @@ const App = () => {
   
    const fetchNotes=(()=>
   {
-     axios.get('http://localhost:3000/api/notes').
+     axios.get('https://backend-5-eqet.onrender.com/api/notes').
   then((res)=>
   {
     console.log(res.data.notes)
@@ -22,7 +22,7 @@ const App = () => {
     const {title,status,description,age}=e.target.elements
     console.log(title.value,status.value,description.value,age.value)
 
-   await axios.post('http://localhost:3000/api/notes',
+   await axios.post('https://backend-5-eqet.onrender.com/api/notes',
     {
       title:title.value,
       status:status.value,
@@ -40,7 +40,7 @@ const App = () => {
 
   const deletHandler=((id)=>
   {  
-    axios.delete('http://localhost:3000/api/notes/'+id)
+    axios.delete('https://backend-5-eqet.onrender.com/api/notes/'+id)
     .then((res)=>
     {
       fetchNotes()
