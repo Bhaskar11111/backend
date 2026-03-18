@@ -9,5 +9,4 @@ const postRouter=require('./routes/post.route')
 app.use('/test/post',postRouter)
 
 
-
 module.exports=app
