@@ -46,12 +46,12 @@ const registerController=async(req,res)=>
 
 const loginController=async(req,res)=>{
     const{username,email,password}=req.body
-    const hash=crypto.createHash('md5').update(password).digest('hex')
+    const hash=await bcrypt.hash(password,10)
     
     const user=await userModel.findOne({
         $or:[
-            {email:email},  
             {username:username},
+            {email:email},  
         ]
     })
      if(!user){
@@ -76,6 +76,7 @@ const loginController=async(req,res)=>{
 
     res.cookie('token',token)
 
+    console.log(req.body)
     res.status(200).json({
         message:'Loggedin successfully',
         user:{
@@ -85,7 +86,31 @@ const loginController=async(req,res)=>{
     })
 }
 
+const getUserController=async(req,res)=>
+{
+    const userId=req.user.id
+    
+    const user=await userModel.findById(userId)
+
+    if(!user){
+        return res.status(404).json({
+            message:'Access not granted'
+        })
+    }
+
+    res.status(200).json({
+        message:'User details fetched successfully',
+        user:{
+            username:user.username,
+            email:user.email,
+            bio:user.bio,
+            profilePicture   :user.profilePicture,
+        }
+    })
+}
+
 module.exports={
     registerController,
-    loginController
+    loginController,
+    getUserController
 }

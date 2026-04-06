@@ -17,6 +17,7 @@ const userSchema=new mongoose.Schema({
         required:[true,'Password is required']
     },
     bio:String,
+    
     profilePicture:{
         type:String,
         default:"https://ik.imagekit.io/lngoi2rpi/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg"
