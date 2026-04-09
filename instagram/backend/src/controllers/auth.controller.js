@@ -53,7 +53,7 @@ const loginController=async(req,res)=>{
             {username:username},
             {email:email},  
         ]
-    })
+    }).select("+password")
      if(!user){
         return res.status(400).json({
             message:'User not found'

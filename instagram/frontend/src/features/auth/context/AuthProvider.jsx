@@ -27,12 +27,14 @@ const AuthProvider = (props) => {
     const registerHandler=(async(username,email,password)=>
     {
     setLoading(true)
-       try{const res=await registerUser(username,email,password)
-
+       try{
+        const res=await registerUser(username,email,password)
+        return res;
        }
        catch(err)
        {
-        console.log(err.response?.data)
+        console.log(err.response)
+        throw err
        }
        finally{
         setLoading(false)

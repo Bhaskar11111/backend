@@ -11,7 +11,6 @@ const client=new ImageKit({
 
 const createPostController=(async(req,res)=>
 { 
-   
     const userId=req.user.id
     console.log(userId)
 
@@ -101,9 +100,29 @@ const likePostController=(async(req,res)=>
     })
 })
 
+const getFeedController=(async(req,res)=>
+{
+    const posts=await Promise.all((await postModel.find().populate('user').lean()).map(async(elem)=>
+    {
+        const isLiked=await likeModel.findOne({
+            user:req.user.username,
+            post:elem._id
+        })
+        elem.isLiked=Boolean(isLiked)
+
+        return elem
+    })) 
+
+    res.status(200).json({
+        message:'Posts fetched successfully',
+        posts
+    })
+})
+
 module.exports={
     createPostController,
     getPostController,
     getPostDetailsController,
-    likePostController
+    likePostController,
+    getFeedController
 }

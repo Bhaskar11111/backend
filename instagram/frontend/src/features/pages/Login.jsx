@@ -17,14 +17,19 @@ const Login = () => {
     return(<h1>Loading...</h1>)
   }
 
-  const submitHandler=((e)=>
+  const submitHandler=(async(e)=>
   {
     e.preventDefault();
-    loginHandler(username,password)
+    await loginHandler(username,password)
     .then((res)=>
     {
       console.log(res)
       navigate('/')
+    })
+    .catch((err)=>
+    {
+      console.log(err.response?.data)
+      throw err
     })
   })
 

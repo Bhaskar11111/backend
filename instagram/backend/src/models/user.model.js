@@ -14,10 +14,11 @@ const userSchema=new mongoose.Schema({
     password:{
         type:String,
         unique:[true,'Password already exists'],
-        required:[true,'Password is required']
+        required:[true,'Password is required'],
+        select:false
     },
     bio:String,
-    
+
     profilePicture:{
         type:String,
         default:"https://ik.imagekit.io/lngoi2rpi/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg"

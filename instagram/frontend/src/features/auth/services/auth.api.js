@@ -33,11 +33,11 @@ export const registerUser=(async(username,email,password)=>
     {
         return res.data
     })
-    .catch(err)
+    .catch((err)=>
     {
         console.log(err.response?.data)
         throw err
-    }
+    })
 })
 
 export const getUser=(async()=>
@@ -49,6 +49,6 @@ export const getUser=(async()=>
     })
     .catch(err)
     {   
-        console.log(err.resp?.data)
+        console.log(err.response?.data)
     }
 })
