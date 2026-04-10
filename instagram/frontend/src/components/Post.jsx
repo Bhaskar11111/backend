@@ -17,7 +17,7 @@ const Post = ({user,post}) => {
     <div className="footer w-full p-2 bg-zinc-800 mt-auto">
         <div className="w-full bg-zinc-800 justify-between flex gap-3 p-1">
             <div className="left-icons flex gap-3">
-                <h1 className='text-white text-3xl'><i className={post.isLiked?`ri-heart-line`:`ri-heart-fill text-red-500`}></i></h1>
+                <h1 className='text-white text-3xl'><i className={`${post.isLiked?`ri-heart-fill text-red-500`:'ri-heart-line '}`}></i></h1>
             <h1 className='text-white text-3xl'><i className="ri-chat-3-line"></i></h1>
             <h1 className='text-white text-3xl'><i className="ri-share-2-line"></i></h1>
             </div>

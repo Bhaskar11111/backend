@@ -4,17 +4,17 @@ import './index.css'
 import App from './App.jsx'
 import {BrowserRouter} from 'react-router-dom'  
 import AuthProvider from './features/auth/context/AuthProvider.jsx'
-import PostProvider from './features/posts/context/PostProvider.jsx'
+import PostProvider from './features/post/context/PostProvider.jsx'
 
 createRoot(document.getElementById('root')).render(
  
     <AuthProvider> 
-       <PostProvider>
+        <PostProvider>
             <BrowserRouter>
-                  <App/>
+                <App/>
             </BrowserRouter>
-       </PostProvider>
-    </AuthProvider>
+        </PostProvider>
+       </AuthProvider>
  
     
 )
