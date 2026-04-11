@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router'
 import axios from 'axios'
 import useAuth from '../auth/hooks/useAuth'
+import Loading from '../../components/Loading'
 
 const Register = () => {
 
@@ -15,7 +16,7 @@ const Register = () => {
 
   if(loading)
   {
-    return <h1>Loading...</h1>
+    return <Loading/>
   }
 
  const submitHandler=(async(e)=>

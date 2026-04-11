@@ -17,9 +17,8 @@ const likeRouter=require('./routes/like.route')
 
 
 app.use('/test/auth',authRouter)
-app.use('/test/post',postRouter)
+app.use('/test/post',postRouter,likeRouter)
 app.use('/test/user',followRouter)
-app.use('/test/posts',likeRouter)
 
 
 

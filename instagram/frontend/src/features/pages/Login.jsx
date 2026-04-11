@@ -3,6 +3,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import {Link, useNavigate} from 'react-router'
 import useAuth from '../auth/hooks/useAuth'
+import Loading from '../../components/Loading'
 
 const Login = () => {
   
@@ -14,7 +15,7 @@ const Login = () => {
   const {loginHandler,loading}=useAuth()  
 
   if(loading){
-    return(<h1>Loading...</h1>)
+    return(<Loading/>)
   }
 
   const submitHandler=(async(e)=>
