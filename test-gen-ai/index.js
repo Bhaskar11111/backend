@@ -16,7 +16,7 @@ const emailTool=tool(
 
             to:z.string().describe("This is recipient's email address"),
 
-            subject:z.string().describe("It cotains the subject of a male"),
+            subject:z.string().describe("It cotains the subject of a mail"),
 
             html:z.string().describe("It is the main body of an email")
         })
