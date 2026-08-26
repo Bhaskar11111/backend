@@ -1,0 +1,22 @@
+{
+  "matches": [
+    {
+      "id": "elem-9",
+      "score": 0.705643833,
+      "values": [],
+      "metadata": {
+        "text": "Worked as a Video Editing Executive for AWS at Medicaps University, creating and editing professional video content for technical\nevents, workshops, and promotional campaigns. Managed post-production, visual storytelling, and content delivery while maintaining\nconsistent quality and branding.\nCO-CURRICULAR ACTIVITIES\nVice President - Google Developer Groups (GDG) on Campus, Medicaps University\nEXTRA CURRICULAR ACTIVITIES\nVice Captain - Medicaps University Cricket Team"
+      }
+    },
+    {
+      "id": "elem-10",
+      "score": 0.680331767,
+      "values": [],
+      "metadata": {
+        "text": "PERSONAL INTERESTS / HOBBIES\nFilmmaking, Video Editing, Web Design, Technology, Cricket\nWEB LINKS\nGithub - https://github.com/Bhaskar11111\nPERSONAL DETAILS"
+      }
+    }
+  ],
+  "namespace": "__default__",
+  "usage": { "readUnits": 1 }
+}
